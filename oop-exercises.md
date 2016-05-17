@@ -110,7 +110,7 @@ Write a Counter type. You use the type as follows. First create a counter:
 var counter = new Counter();
 ```
 
-Then you can call the counter's `count()` method to count and get the next number in the count.
+Then you can call the counters `count()` method to count and get the next number in the count.
 
 ```
 console.log(counter.count()); // prints 1
@@ -242,27 +242,3 @@ Write a Deck type. You use the type as follows:
 var deck = new Deck();
 deck.numCards() // gives 52;
 var card = deck.draw(); // gives a card and removes it from the deck
-
-`````
-function Deck() {
-  this.cards = [];
-  for (var i = 1; i <= 13; i++) {
-    this.cards.push({ point: i, suit: 'spades' });
-    this.cards.push({ point: i, suit: 'hearts' });
-    this.cards.push({ point: i, suit: 'clubs' });
-    this.cards.push({ point: i, suit: 'diamonds' });
-  }
-}
-
-Deck.prototype.draw = function() {
-  return this.cards.pop();
-};
-
-Deck.prototype.numCards = function() {
-  return this.cards.length;
-};
-
-var deck = new Deck();
-console.log('Cards in deck: ' + deck.numCards());
-var card = deck.draw();
-console.log('Cards in deck: ' + deck.numCards());
